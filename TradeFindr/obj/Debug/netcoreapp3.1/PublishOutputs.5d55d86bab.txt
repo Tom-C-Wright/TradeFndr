@@ -1,0 +1,13 @@
+E:\Software_Dev\I_dont_fucking_know_anymore\Published\Combination_Finder.exe
+E:\Software_Dev\I_dont_fucking_know_anymore\Published\TradeFindr.exe
+E:\Software_Dev\I_dont_fucking_know_anymore\Published\TradeFindr.dll
+E:\Software_Dev\I_dont_fucking_know_anymore\Published\TradeFindr.deps.json
+E:\Software_Dev\I_dont_fucking_know_anymore\Published\TradeFindr.runtimeconfig.json
+E:\Software_Dev\I_dont_fucking_know_anymore\Published\TradeFindr.pdb
+E:\Software_Dev\I_dont_fucking_know_anymore\Published\ExcelDataReader.dll
+E:\Software_Dev\I_dont_fucking_know_anymore\Published\ExcelDataReader.DataSet.dll
+E:\Software_Dev\I_dont_fucking_know_anymore\Published\System.Runtime.CompilerServices.Unsafe.dll
+E:\Software_Dev\I_dont_fucking_know_anymore\Published\System.Text.Encoding.CodePages.dll
+E:\Software_Dev\I_dont_fucking_know_anymore\Published\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll
+E:\Software_Dev\I_dont_fucking_know_anymore\Published\Combination_Finder.dll
+E:\Software_Dev\I_dont_fucking_know_anymore\Published\Combination_Finder.pdb

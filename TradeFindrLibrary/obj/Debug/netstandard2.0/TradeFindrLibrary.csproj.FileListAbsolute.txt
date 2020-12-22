@@ -1,0 +1,9 @@
+E:\Software_Dev\I_dont_fucking_know_anymore\TradeFindrLibrary\obj\Debug\netstandard2.0\TradeFindrLibrary.csprojAssemblyReference.cache
+E:\Software_Dev\I_dont_fucking_know_anymore\TradeFindrLibrary\obj\Debug\netstandard2.0\TradeFindrLibrary.AssemblyInfoInputs.cache
+E:\Software_Dev\I_dont_fucking_know_anymore\TradeFindrLibrary\obj\Debug\netstandard2.0\TradeFindrLibrary.AssemblyInfo.cs
+E:\Software_Dev\I_dont_fucking_know_anymore\TradeFindrLibrary\obj\Debug\netstandard2.0\TradeFindrLibrary.csproj.CoreCompileInputs.cache
+E:\Software_Dev\I_dont_fucking_know_anymore\TradeFindrLibrary\bin\Debug\netstandard2.0\TradeFindrLibrary.deps.json
+E:\Software_Dev\I_dont_fucking_know_anymore\TradeFindrLibrary\bin\Debug\netstandard2.0\TradeFindrLibrary.dll
+E:\Software_Dev\I_dont_fucking_know_anymore\TradeFindrLibrary\bin\Debug\netstandard2.0\TradeFindrLibrary.pdb
+E:\Software_Dev\I_dont_fucking_know_anymore\TradeFindrLibrary\obj\Debug\netstandard2.0\TradeFindrLibrary.dll
+E:\Software_Dev\I_dont_fucking_know_anymore\TradeFindrLibrary\obj\Debug\netstandard2.0\TradeFindrLibrary.pdb
