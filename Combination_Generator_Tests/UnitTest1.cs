@@ -1,8 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Xunit.Sdk;
-using Combination_Finder;
 using System.Collections.Generic;
 using System.Linq;
+using TradeFindr;
 
 namespace Combination_Generator_Tests
 {

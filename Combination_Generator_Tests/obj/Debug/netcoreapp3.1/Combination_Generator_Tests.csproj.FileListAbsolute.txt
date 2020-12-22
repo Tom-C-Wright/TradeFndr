@@ -98,3 +98,9 @@ E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\obj\Debu
 E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.dll
 E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.pdb
 E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.genruntimeconfig.cache
+C:\Software_Dev\TradeFndr\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.csprojAssemblyReference.cache
+C:\Software_Dev\TradeFndr\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.AssemblyInfoInputs.cache
+C:\Software_Dev\TradeFndr\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.AssemblyInfo.cs
+C:\Software_Dev\TradeFndr\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.csproj.CoreCompileInputs.cache
+C:\Software_Dev\TradeFndr\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.dll
+C:\Software_Dev\TradeFndr\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.pdb

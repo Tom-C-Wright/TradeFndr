@@ -9,19 +9,38 @@
     <StackPanel>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Button 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <TextBlock 
                 Grid.Column="0"
+                x:Name="File_Path" Text="C://"
+            />
+            <Button 
+                Grid.Column="1"
                 Content="Choose File ..." 
                 Click="btn_OpenFile"
             />
-            <TextBlock 
-                Grid.Column="1"
-                x:Name="File_Path" Text="C://"
-            />
         </Grid>
-        
+        <DataGrid
+                AutoGenerateColumns="True"
+                Name="datagrid_TradePreview"
+                Margin="10"
+                >
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="Value" />
+                <!--    Binding="{Binding Path=Value, StringFormat=N2}" -->
+                
+                    <DataGridTextColumn 
+                    Header="Volume"/>
+                    <!--    Binding="{Binding Path=Volume, StringFormat=N2}"/> -->
+                    
+            </DataGrid.Columns> 
+        </DataGrid>
     </StackPanel>
 </Window>

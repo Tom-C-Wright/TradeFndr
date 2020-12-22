@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,9 +25,14 @@ namespace TradeFindr
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ObservableCollection<Trade> Trades;
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = this;
+            Trades = new ObservableCollection<Trade>();
+            datagrid_TradePreview.ItemsSource = Trades;
+            
         }
 
         private void btn_OpenFile(Object sender, RoutedEventArgs e)
@@ -38,6 +44,12 @@ namespace TradeFindr
                 {
                     ExcelReader excelReader = new ExcelReader();
                     var trades = excelReader.ReadFile(openFileDialog.FileName);
+                    File_Path.Text = openFileDialog.FileName;
+                    for (ushort i = 0; i < trades.Length; i++)
+                    {
+                        Trades.Add(trades[i]);
+                    }
+                    var j = 0;
                 }
                 catch (InvalidOperationException ex)
                 {

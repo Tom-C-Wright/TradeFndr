@@ -10,7 +10,7 @@ namespace TradeFindr
         BID,
         ASK
     }
-    public struct Trade
+    public class Trade
     {
         public double Value;
         public double Volume;

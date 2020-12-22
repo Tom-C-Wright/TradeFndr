@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PLtJDkwgJ1n2NqkWY7oUXxxDBdGuaqFMYfIpszeq7D6SS+G5d5qtfOH1l3E8L7qdQGeVZ9cRxi+xcNu6iXP1xw==",
+  "dgSpecHash": "30olveEohjvejWzUWF7MKVuFZBcJnKfT7A6luBe+/F6ZC2Udu+0LesOIF7td79j4egfnxiYAiL+PoaWK8LNXTA==",
   "success": true,
-  "projectFilePath": "E:\\Software_Dev\\I_dont_fucking_know_anymore\\TradeFindr\\TradeFindr.csproj",
+  "projectFilePath": "C:\\Software_Dev\\TradeFndr\\TradeFindr\\TradeFindr.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tom\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",
     "C:\\Users\\Tom\\.nuget\\packages\\exceldatareader.dataset\\3.6.0\\exceldatareader.dataset.3.6.0.nupkg.sha512",
