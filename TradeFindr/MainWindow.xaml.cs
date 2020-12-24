@@ -49,7 +49,6 @@ namespace TradeFindr
                     {
                         Trades.Add(trades[i]);
                     }
-                    var j = 0;
                 }
                 catch (InvalidOperationException ex)
                 {

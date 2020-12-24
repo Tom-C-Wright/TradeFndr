@@ -26,21 +26,38 @@
             />
         </Grid>
         <DataGrid
-                AutoGenerateColumns="True"
+                AutoGenerateColumns="False"
                 Name="datagrid_TradePreview"
                 Margin="10"
                 >
-            
             <DataGrid.Columns>
+                <DataGridTextColumn 
+                    Header="Time"
+                    Binding="{Binding Time, StringFormat=HH:mm:ss}"
+                    Width="1*"
+                    />
                 <DataGridTextColumn
-                    Header="Value" />
-                <!--    Binding="{Binding Path=Value, StringFormat=N2}" -->
-                
-                    <DataGridTextColumn 
-                    Header="Volume"/>
-                    <!--    Binding="{Binding Path=Volume, StringFormat=N2}"/> -->
-                    
-            </DataGrid.Columns> 
+                    Header="Value" 
+                    Binding="{Binding Value, StringFormat=N2}"
+                    Width="1*"
+                    />
+
+                <DataGridTextColumn 
+                    Header="Volume"
+                    Binding="{Binding Volume, StringFormat=N2}"
+                    Width="1*"
+                    />
+                <DataGridTextColumn 
+                    Header="Price"
+                    Binding="{Binding Price, StringFormat=N2}"
+                    Width="1*"
+                    />
+                <DataGridTextColumn 
+                    Header="Reason"
+                    Binding="{Binding Reason}"
+                    Width="1*"
+                    />
+            </DataGrid.Columns>
         </DataGrid>
     </StackPanel>
 </Window>
