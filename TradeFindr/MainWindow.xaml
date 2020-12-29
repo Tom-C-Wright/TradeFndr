@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TradeFindr"
         mc:Ignorable="d"
+<<<<<<< HEAD
         Title="MainWindow"  
         MinHeight="500" Height="500"  
         MinWidth="850" Width="850">
@@ -28,4 +29,61 @@
             >
         </Frame>
     </Grid>
+=======
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <TextBlock 
+                Grid.Column="0"
+                x:Name="File_Path" Text="C://"
+            />
+            <Button 
+                Grid.Column="1"
+                Content="Choose File ..." 
+                Click="btn_OpenFile"
+            />
+        </Grid>
+        <DataGrid
+                AutoGenerateColumns="False"
+                Name="datagrid_TradePreview"
+                Margin="10"
+                >
+            <DataGrid.Columns>
+                <DataGridTextColumn 
+                    Header="Time"
+                    Binding="{Binding Time, StringFormat=HH:mm:ss}"
+                    Width="1*"
+                    />
+                <DataGridTextColumn
+                    Header="Value" 
+                    Binding="{Binding Value, StringFormat=N2}"
+                    Width="1*"
+                    />
+
+                <DataGridTextColumn 
+                    Header="Volume"
+                    Binding="{Binding Volume, StringFormat=N2}"
+                    Width="1*"
+                    />
+                <DataGridTextColumn 
+                    Header="Price"
+                    Binding="{Binding Price, StringFormat=N2}"
+                    Width="1*"
+                    />
+                <DataGridTextColumn 
+                    Header="Reason"
+                    Binding="{Binding Reason}"
+                    Width="1*"
+                    />
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+>>>>>>> aa80f9a9f1e8dea7cb85fce0bc9e311323c25865
 </Window>

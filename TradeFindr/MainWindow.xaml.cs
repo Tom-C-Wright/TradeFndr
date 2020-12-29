@@ -33,5 +33,38 @@ namespace TradeFindr
              //MainFrame.Navigate(new AddTotalsPage());
             //MainFrame.Navigate(new ResultsPage());
         }
+<<<<<<< HEAD
+=======
+
+        private void btn_OpenFile(Object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    ExcelReader excelReader = new ExcelReader();
+                    var trades = excelReader.ReadFile(openFileDialog.FileName);
+                    File_Path.Text = openFileDialog.FileName;
+                    for (ushort i = 0; i < trades.Length; i++)
+                    {
+                        Trades.Add(trades[i]);
+                    }
+                }
+                catch (InvalidOperationException ex)
+                {
+                    MessageBox.Show("Unable to open file: \n\n" + ex.Message);
+                } 
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error has occured: \n\n" + ex.Message);
+                }
+
+
+            }
+            
+        }
+        
+>>>>>>> aa80f9a9f1e8dea7cb85fce0bc9e311323c25865
     }
 }
