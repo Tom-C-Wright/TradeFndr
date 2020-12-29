@@ -9,7 +9,27 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AddTotalsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="OpenFilePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ResultsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AddTotalsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="OpenFilePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ResultsPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

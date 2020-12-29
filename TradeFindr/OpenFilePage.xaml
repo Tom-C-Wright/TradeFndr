@@ -1,0 +1,124 @@
+﻿<Page x:Class="TradeFindr.OpenFilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TradeFindr"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Height="auto"
+      Width="auto"
+      Title="Page2"
+      Background="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition MinHeight="0" MaxHeight="30" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid
+            Grid.Column="0"
+            Grid.Row="0"
+            >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <TextBlock 
+                Grid.Column="0"
+                Grid.Row="0"
+                Width="150"
+                HorizontalAlignment="Left"
+                Text="Step 1: Select File"
+                Margin="0,0,0,10"
+                Background="LightGray"/>
+            <TextBlock 
+                Grid.Column="0"
+                Grid.Row="1"
+                Background="Beige"
+                x:Name="File_Path" Text="C://"
+            />
+            <Button 
+                Grid.Column="1"
+                Grid.Row="1"
+                Content="Choose File ..." 
+                Click="btn_OpenFile"
+            />
+        </Grid>
+  
+        <TextBlock 
+            Grid.Row="1"
+            x:Name="TextBox_Step2"
+            Text="Step 2: Verify File Contents" 
+            Width="150" Height="20"
+            Background="LightGray"
+            HorizontalAlignment="Left" VerticalAlignment="Center"
+            Margin="0,5,0,5"
+            Visibility="Collapsed" d:Visibility="Visible"
+               
+        />
+        <DataGrid
+            Grid.Column="0"
+            Grid.Row="2"
+            AutoGenerateColumns="False"
+            Name="datagrid_TradePreview"
+            Margin="10"
+            Width="auto"
+            Visibility="Hidden" d:Visibility="Visible"
+            ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+        >
+
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                Header="Time"
+                Binding="{Binding Time, StringFormat=HH:mm:ss}"
+                Width="1*"
+            />
+
+                <DataGridTextColumn
+                Header="Value" 
+                Binding="{Binding Value, StringFormat=N2}" 
+                Width="1*"
+            />
+
+                <DataGridTextColumn
+                Header="Volume"
+                Binding="{Binding Volume, StringFormat=N2}"
+                Width="1*"
+            />
+
+                <DataGridTextColumn
+                Header="Price"
+                Binding="{Binding Price, StringFormat=N2}"
+                Width="1*"
+            />
+
+                <DataGridTextColumn
+                Header="Reason"
+                Binding="{Binding Reason}"
+                Width="1*"
+            />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button 
+            x:Name="Btn_Next"
+            Click="btn_NextScreen"
+            Grid.Column="0" Grid.Row="3"
+            Margin="10"
+            Content="Next" 
+            Width="150"
+            VerticalAlignment="Bottom" HorizontalAlignment="Right"
+            Visibility="Collapsed" d:Visibility="Visible"
+        />
+    </Grid>
+</Page>

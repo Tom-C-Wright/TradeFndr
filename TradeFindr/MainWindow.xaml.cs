@@ -21,49 +21,17 @@ using System.Windows.Shapes;
 namespace TradeFindr
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    ///     The main page is simply a frame for hosting the other pages in the application.
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ObservableCollection<Trade> Trades;
         public MainWindow()
         {
             InitializeComponent();
             this.DataContext = this;
-            Trades = new ObservableCollection<Trade>();
-            datagrid_TradePreview.ItemsSource = Trades;
-            
+            MainFrame.Navigate(new OpenFilePage()); // Home page
+             //MainFrame.Navigate(new AddTotalsPage());
+            //MainFrame.Navigate(new ResultsPage());
         }
-
-        private void btn_OpenFile(Object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
-            {
-                try
-                {
-                    ExcelReader excelReader = new ExcelReader();
-                    var trades = excelReader.ReadFile(openFileDialog.FileName);
-                    File_Path.Text = openFileDialog.FileName;
-                    for (ushort i = 0; i < trades.Length; i++)
-                    {
-                        Trades.Add(trades[i]);
-                    }
-                    var j = 0;
-                }
-                catch (InvalidOperationException ex)
-                {
-                    MessageBox.Show("Unable to open file: \n\n" + ex.Message);
-                } 
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error has occured: \n\n" + ex.Message);
-                }
-
-
-            }
-            
-        }
-        
     }
 }

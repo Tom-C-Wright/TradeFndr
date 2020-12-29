@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "An2vT+A3LKBfHWLHcbTqVk/HIHUnX/tN0RoRG/WtIgMAmjzQZaIt8bUt9H04pPjvlRPETj85nej3VUzXBQCWZg==",
+  "dgSpecHash": "RC1LjqkpzY94FTdANJCaBxenTMkgsrOz8duOCChA/IU1NT1gFGDobI/VErslU7y08hM+aa+6FsieBqY+vhNF/Q==",
   "success": true,
-  "projectFilePath": "C:\\Software_Dev\\TradeFndr\\TradeFindrLibrary\\TradeFindrLibrary.csproj",
+  "projectFilePath": "E:\\Software_Dev\\I_dont_fucking_know_anymore\\TradeFindrLibrary\\TradeFindrLibrary.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tom\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",
     "C:\\Users\\Tom\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

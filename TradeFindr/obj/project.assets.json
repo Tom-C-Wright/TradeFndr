@@ -231,11 +231,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Software_Dev\\TradeFndr\\TradeFindr\\TradeFindr.csproj",
+      "projectUniqueName": "E:\\Software_Dev\\I_dont_fucking_know_anymore\\TradeFindr\\TradeFindr.csproj",
       "projectName": "TradeFindr",
-      "projectPath": "C:\\Software_Dev\\TradeFndr\\TradeFindr\\TradeFindr.csproj",
+      "projectPath": "E:\\Software_Dev\\I_dont_fucking_know_anymore\\TradeFindr\\TradeFindr.csproj",
       "packagesPath": "C:\\Users\\Tom\\.nuget\\packages\\",
-      "outputPath": "C:\\Software_Dev\\TradeFndr\\TradeFindr\\obj\\",
+      "outputPath": "E:\\Software_Dev\\I_dont_fucking_know_anymore\\TradeFindr\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tom\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -252,8 +252,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Software_Dev\\TradeFndr\\TradeFindrLibrary\\TradeFindrLibrary.csproj": {
-              "projectPath": "C:\\Software_Dev\\TradeFndr\\TradeFindrLibrary\\TradeFindrLibrary.csproj"
+            "E:\\Software_Dev\\I_dont_fucking_know_anymore\\TradeFindrLibrary\\TradeFindrLibrary.csproj": {
+              "projectPath": "E:\\Software_Dev\\I_dont_fucking_know_anymore\\TradeFindrLibrary\\TradeFindrLibrary.csproj"
             }
           }
         }

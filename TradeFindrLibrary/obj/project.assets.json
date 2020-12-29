@@ -319,11 +319,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Software_Dev\\TradeFndr\\TradeFindrLibrary\\TradeFindrLibrary.csproj",
+      "projectUniqueName": "E:\\Software_Dev\\I_dont_fucking_know_anymore\\TradeFindrLibrary\\TradeFindrLibrary.csproj",
       "projectName": "TradeFindrLibrary",
-      "projectPath": "C:\\Software_Dev\\TradeFndr\\TradeFindrLibrary\\TradeFindrLibrary.csproj",
+      "projectPath": "E:\\Software_Dev\\I_dont_fucking_know_anymore\\TradeFindrLibrary\\TradeFindrLibrary.csproj",
       "packagesPath": "C:\\Users\\Tom\\.nuget\\packages\\",
-      "outputPath": "C:\\Software_Dev\\TradeFndr\\TradeFindrLibrary\\obj\\",
+      "outputPath": "E:\\Software_Dev\\I_dont_fucking_know_anymore\\TradeFindrLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Tom\\AppData\\Roaming\\NuGet\\NuGet.Config",

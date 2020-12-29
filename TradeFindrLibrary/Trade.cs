@@ -10,13 +10,14 @@ namespace TradeFindr
         BID,
         ASK
     }
-    public class Trade
+    public struct Trade
     {
-        public double Value;
-        public double Volume;
-        public double Price;
-        public DateTime Time;
-        public Reason Reason;
+        // Properties have to be used for WPF databinding
+        public double Value { get; set; }
+        public double Volume { get; set; }
+        public double Price { get; set; }
+        public DateTime Time { get; set; }
+        public Reason Reason { get; set; }
 
         public Trade(DateTime time, double price, double value, double volume, Reason reason)
         {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A0H1GT+Mu63jhC/+QcpQ72Wb6Xqec9o2orFVx6Pddd5mnRZnSG9BZI1RroXba/bh/GWPIWzWqL+nwmwsrKs1gQ==",
+  "dgSpecHash": "IRcM8Fn9R+pE2mEhPz4gass6BO5+HXRSVubrEkTvhhQIeRjo6iqodLC+/4snQGWFdT2FAimFkgc2WHMROEfcvA==",
   "success": true,
-  "projectFilePath": "C:\\Software_Dev\\TradeFndr\\Combination_Generator_Tests\\Combination_Generator_Tests.csproj",
+  "projectFilePath": "E:\\Software_Dev\\I_dont_fucking_know_anymore\\Combination_Generator_Tests\\Combination_Generator_Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tom\\.nuget\\packages\\coverlet.collector\\1.0.1\\coverlet.collector.1.0.1.nupkg.sha512",
     "C:\\Users\\Tom\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",

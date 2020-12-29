@@ -87,13 +87,10 @@ E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\obj\Debu
 E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.AssemblyInfoInputs.cache
 E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.AssemblyInfo.cs
 E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.csproj.CopyComplete
-E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\bin\Debug\netcoreapp3.1\Combination_Finder.exe
 E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\bin\Debug\netcoreapp3.1\Combination_Generator_Tests.pdb
 E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
 E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\bin\Debug\netcoreapp3.1\xunit.core.dll
 E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\bin\Debug\netcoreapp3.1\xunit.execution.dotnet.dll
-E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\bin\Debug\netcoreapp3.1\Combination_Finder.dll
-E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\bin\Debug\netcoreapp3.1\Combination_Finder.pdb
 E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.csproj.CoreCompileInputs.cache
 E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.dll
 E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.pdb
@@ -104,3 +101,9 @@ C:\Software_Dev\TradeFndr\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Co
 C:\Software_Dev\TradeFndr\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.csproj.CoreCompileInputs.cache
 C:\Software_Dev\TradeFndr\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.dll
 C:\Software_Dev\TradeFndr\Combination_Generator_Tests\obj\Debug\netcoreapp3.1\Combination_Generator_Tests.pdb
+E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\bin\Debug\netcoreapp3.1\ExcelDataReader.dll
+E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
+E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\bin\Debug\netcoreapp3.1\System.Text.Encoding.CodePages.dll
+E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Text.Encoding.CodePages.dll
+E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\bin\Debug\netcoreapp3.1\TradeFindrLibrary.dll
+E:\Software_Dev\I_dont_fucking_know_anymore\Combination_Generator_Tests\bin\Debug\netcoreapp3.1\TradeFindrLibrary.pdb
