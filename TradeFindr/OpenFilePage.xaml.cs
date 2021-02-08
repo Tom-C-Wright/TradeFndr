@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,11 +20,13 @@ namespace TradeFindr
     /// </summary>
     public partial class OpenFilePage : Page
     {
-        
+        private readonly ViewModel ViewModel;
         public OpenFilePage()
         {
+            ViewModel = ViewModel.Instance;
             InitializeComponent();
-            datagrid_TradePreview.ItemsSource = ViewModel.Instance.Trades;
+            datagrid_TradePreview.ItemsSource = ViewModel.ObservableTrades;
+            
         }
 
         private void btn_OpenFile(Object sender, RoutedEventArgs e)
@@ -36,10 +39,12 @@ namespace TradeFindr
                     ExcelReader excelReader = new ExcelReader();
                     var trades = excelReader.ReadFile(openFileDialog.FileName);
                     File_Path.Text = openFileDialog.FileName;
+                    ViewModel.Trades.Clear(); 
                     for (ushort i = 0; i < trades.Length; i++)
                     {
-                        ViewModel.Instance.Trades.Add(trades[i]);
+                        ViewModel.Trades.Add(trades[i]);
                     }
+                    
                     datagrid_TradePreview.Visibility = Visibility.Visible;
                     TextBox_Step2.Visibility = Visibility.Visible;
                     Btn_Next.Visibility = Visibility.Visible;

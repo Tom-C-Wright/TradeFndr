@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow"  
         MinHeight="500" Height="500"  
-        MinWidth="850" Width="850">
-
+        MinWidth="850" Width="850"
+        ResizeMode="NoResize">
+        
 
     <Grid>
         <Grid.ColumnDefinitions>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Data;
 using TradeFindrLibrary;
 
 namespace TradeFindr
@@ -9,7 +10,10 @@ namespace TradeFindr
     public sealed class ViewModel
     {
         private static readonly ViewModel instance = new ViewModel();
-        private ViewModel() { }
+        private ViewModel() 
+        {
+            
+        }
 
         public static ViewModel Instance
         {
@@ -19,18 +23,19 @@ namespace TradeFindr
             }
         }
 
-        private ObservableCollection<Trade> trades = new ObservableCollection<Trade>();
-        public ObservableCollection<Trade> Trades
+        public readonly ObservableCollection<Trade> Trades = new ObservableCollection<Trade>();
+        public readonly ObservableCollection<Broker> Brokers = new ObservableCollection<Broker>();
+
+        // Exposed observables for Views
+        public ObservableCollection<Trade> ObservableTrades
         {
-            get { return trades; }
-            set { trades = value; }
+            get { return Trades; }
+
         }
 
-        private ObservableCollection<Total> totals = new ObservableCollection<Total>();
-        public ObservableCollection<Total> Totals
+        public ObservableCollection<Broker> ObservableTotals
         {
-            get { return totals; }
-            set { totals = value; }
+            get { return Brokers;  }
         }
     }
 }

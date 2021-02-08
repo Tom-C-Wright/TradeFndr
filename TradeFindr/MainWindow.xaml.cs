@@ -29,9 +29,8 @@ namespace TradeFindr
         {
             InitializeComponent();
             this.DataContext = this;
-            MainFrame.Navigate(new OpenFilePage()); // Home page
-             //MainFrame.Navigate(new AddTotalsPage());
-            //MainFrame.Navigate(new ResultsPage());
+            // Take us to the home page
+            MainFrame.Navigate(new OpenFilePage());
         }
     }
 }

@@ -11,93 +11,136 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="120"/>
-            <RowDefinition Height="20*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="30" />
         </Grid.RowDefinitions>
-        <Grid 
-            Grid.Column="0" Grid.Row="0"
-            Height="100" VerticalAlignment="Top"
-              Margin="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*" />
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-            </Grid.RowDefinitions>
-            <TextBlock 
-                Text="Name" 
-                HorizontalAlignment="Center" VerticalAlignment="Center"
+        <Border BorderThickness="1" BorderBrush="Gray">
+            <Grid 
                 Grid.Column="0" Grid.Row="0"
-            />
-            <!-- Input for Name -->
-            <TextBox 
-                Name="TextBox_Title"
-                Grid.Column="1" Grid.Row="0"
-                PreviewTextInput="TextValidation"
-            />
-            <TextBlock 
-                Text="Buy Value" 
-                HorizontalAlignment="Center" VerticalAlignment="Center"
-                Grid.Column="0" Grid.Row="1"
-            />
-            <!-- Input for Buy Value-->
-            <TextBox 
-                Name="TextBox_BuyValue"
-                Grid.Column="1" Grid.Row="1"
-                PreviewTextInput="NumberValidation"
-            />
-            <TextBlock 
-                Text="Buy Volume" 
-                HorizontalAlignment="Center" VerticalAlignment="Center"
-                Grid.Column="0" Grid.Row="2"
-            />
-            <!-- Input for Buy volume-->
-            <TextBox 
-                Name="TextBox_BuyVolume"
-                Grid.Column="1" Grid.Row="2"
-                PreviewTextInput="NumberValidation"
-            />
-            <Button 
-                Click="AddTotal"
-                Width="150" HorizontalAlignment="Left" 
-                Margin="10,0,0,0"
-                Grid.Column="3" Grid.Row="4"
-                Content="Add"
-            />
-            <TextBlock 
-                Text="Sell Value" 
-                HorizontalAlignment="Center" VerticalAlignment="Center"
-                Grid.Column="0" Grid.Row="3"
-            />
-            <!-- Input for Buy volume-->
-            <TextBox 
-                Name="TextBox_SellValue"
-                Grid.Column="1" Grid.Row="3"
-                PreviewTextInput="NumberValidation"
-            />
-            <TextBlock 
-                Text="Sell Volume" 
-                HorizontalAlignment="Center" VerticalAlignment="Center"
-                Grid.Column="0" Grid.Row="4"
-            />
-            <!-- Input for Buy volume-->
-            <TextBox 
-                Name="TextBox_SellVolume"
-                Grid.Column="1" Grid.Row="4"
-                PreviewTextInput="NumberValidation"
-            />
-           
-        </Grid>
-        <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Top">
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                
+                Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="0.75*"/>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25" />
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+
+                </Grid.RowDefinitions>
+                <TextBlock 
+                    Text="Name" Margin="5"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Grid.Column="0" Grid.Row="0"
+                />
+                <!-- Input for Name -->
+                <TextBox 
+                    Name="TextBox_Title" 
+                    Grid.Column="1" Grid.Row="0" Margin="0,2.5,0,2.5"
+                    PreviewTextInput="TextValidation"
+                />
+                <TextBlock 
+                    Text="Buy Value" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Grid.Column="0" Grid.Row="1"
+                />
+                <!-- Input for Buy Value-->
+                <TextBox 
+                    Name="TextBox_BuyValue"
+                    Grid.Column="1" Grid.Row="1" Margin="0,2.5,0,2.5"
+                    PreviewTextInput="NumberValidation"
+                />
+                
+                <TextBlock 
+                    Text="Sell Value" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Grid.Column="0" Grid.Row="2"
+                />
+                <!-- Input for Sell Value-->
+                <TextBox 
+                    Name="TextBox_SellValue"
+                    Grid.Column="1" Grid.Row="2" Margin="0,2.5,0,2.5"
+                    PreviewTextInput="NumberValidation"
+                />
+                <TextBlock 
+                    Text="Sell Volume" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Grid.Column="0" Grid.Row="4"
+                />
+                <!-- Input for Sell volume-->
+                <TextBox 
+                    Name="TextBox_SellVolume"
+                    Grid.Column="1" Grid.Row="4" Margin="0,2.5,0,2.5"
+                    PreviewTextInput="NumberValidation"
+                />
+                <TextBlock 
+                    Text="Buy Volume" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Grid.Column="0" Grid.Row="3"
+                />
+                <!-- Input for Buy volume-->
+                <TextBox 
+                    Name="TextBox_BuyVolume"
+                    Grid.Column="1" Grid.Row="3" Margin="0,2.5,0,2.5"
+                    PreviewTextInput="NumberValidation"
+                />
+                <TextBlock 
+                    Text="No. Buys" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Grid.Column="0" Grid.Row="5"
+                />
+                <!-- Input for Total Buys-->
+                <TextBox 
+                    Name="TextBox_TotalBuys"
+                    Grid.Column="1" Grid.Row="5" Margin="0,2.5,0,2.5"
+                    PreviewTextInput="NumberValidation"
+                />
+
+                
+
+             
+
+                <TextBlock 
+                    Text="No. Sells" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    Grid.Column="0" Grid.Row="6"
+                />
+                <!-- Input for Total Sells-->
+                <TextBox 
+                    Name="TextBox_TotalSells"
+                    Grid.Column="1" Grid.Row="6" Margin="0,2.5,0,2.5"
+                    PreviewTextInput="NumberValidation"
+                />
+
+                <Button 
+                    Click="AddTotal"
+                    HorizontalAlignment="Stretch" Margin="2"
+                    Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2"
+                    Content="Add"
+                />
+                <Button 
+                    Click="ClearForm"
+                    HorizontalAlignment="Stretch" Margin="2"
+                    Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2"
+                    Content="Clear"
+                />
+
+            </Grid>
+        </Border>
+        <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Top">
             <TextBlock 
                 Text="Totals:" FontSize="16" TextAlignment="Left" 
                 Width="100" HorizontalAlignment="Left" Margin="10,10,0,0"
@@ -107,7 +150,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn
                         Header="Title" Width="1*"
-                        Binding="{Binding Name}"
+                        Binding="{Binding Company}"
                     />
                     <DataGridTextColumn
                         Header="Buy Value" Width="1*"
@@ -118,19 +161,27 @@
                         Binding="{Binding BuyVolume}"
                     />
                     <DataGridTextColumn
-                        Header="Buy Volume" Width="1*"
+                        Header="Sell Value" Width="1*"
+                        Binding="{Binding SellValue}"
+                    />
+                    <DataGridTextColumn
+                        Header="Sell Volume" Width="1*"
                         Binding="{Binding SellVolume}"
                     />
                     <DataGridTextColumn
-                        Header="Buy Volume" Width="1*"
-                        Binding="{Binding SellVolume}"
+                        Header="Total Buys" Width="1*"
+                        Binding="{Binding TotalBuys}"
+                    />
+                    <DataGridTextColumn
+                        Header="Total Sells" Width="1*"
+                        Binding="{Binding TotalSells}"
                     />
                 </DataGrid.Columns>
             </DataGrid>
             <Button Content="Delete Total" Click="DeleteTotal" Margin="10,0,10,0"/>
         </StackPanel>
         <Button 
-            Grid.Column="0" Grid.Row="2"
+            Grid.Column="1" Grid.Row="2"
             HorizontalAlignment="Right"
             Width="150" Margin="5"
             Content="Next"

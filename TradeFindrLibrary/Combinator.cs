@@ -12,72 +12,140 @@ namespace TradeFindr
      */
     public class Combinator<T>
     {
-        private List<ushort> Indices;
-        private T[] Items;
-        private ushort ItemCount
-        {
-            get { return Convert.ToUInt16(Items.Length -1); }
-        }
-        private ushort MaxDepth;
-        private int CurrentDepth
-        {
-            get { return Indices.Count - 1; }
-        }
-        
-        public Combinator(List<T> items, ushort maxDepth)
-        {
-            Items = items.ToArray();
-            MaxDepth = maxDepth;
-            Indices = new List<ushort>() { 0 };
-        }
-        
-        public T[] getNextCombo()
-        {
-            var newIndices = new List<ushort>(Indices);
-            if (Indices.Count > 0)
-            {
-                if (CurrentDepth < MaxDepth && Indices[CurrentDepth] < ItemCount)
-                {
-                    // doesn't like (Indices[x] + 1) for some reason
-                    ushort nextIndex = Indices[CurrentDepth];
-                    nextIndex++;
-                    Indices.Add(nextIndex);
-                } 
-                else if (Indices[CurrentDepth] < ItemCount)
-                {
-                    Indices[CurrentDepth]++;
-                } 
-                else
-                {
-                    while (Indices.Count > 0 && Indices[CurrentDepth] >= ItemCount)
-                    {
-                        Indices.RemoveAt(CurrentDepth);
-                    }
-             
-                    if (Indices.Count > 0)
-                    {
-                        Indices[CurrentDepth]++;
-                    }
-                }
-            }
+        private List<int> Indices;
 
+        private readonly List<T> Items;
+        private uint MaxSize;
+        private int ItemCount
+        {
+            get { return Items.Count - 1; }
+        }
+
+        public Combinator(List<T> items, uint maxSize)
+        {
+            Items = new List<T>(items);
+            Indices = new List<int>() { 0 };
+            MaxSize = maxSize;
+        }
+
+        public T[] GetNextCombo()
+        {
             var result = new List<T>();
+            var indexCount = Indices.Count - 1;
+
+            if (Items.Count == 0)
+            {
+                return result.ToArray();
+            }
 
             foreach (ushort index in Indices)
             {
-                result.Add(Items[index]);
+                result.Add(this.Items[index]);
+            }
+
+            // Increment the last index 
+            if (Indices[indexCount] < ItemCount)
+            {
+                Indices[indexCount]++;
+            }
+            else
+            {
+                if (Indices[0] < Items.Count - Indices.Count)
+                {
+                   
+                    var i = indexCount;
+                    var diff = ItemCount;
+                    // Iterate backwards until we find an index that can be incremented
+                    do
+                    {
+                        i--;
+                        diff--;
+                    }
+                    while (Indices[i] >= diff && i > 0);
+                    Indices[i]++;
+
+                    // From the incremented index, reset all indices onwards
+                    i++;
+                    for (; i < Indices.Count; i++)
+                    {
+                        Indices[i] = Indices[i - 1] + 1;
+                    }
+                }
+                else if (Indices.Count < Items.Count)
+                {
+                    // We can carry a 1 back a place
+                    Indices.Add(0);
+                    for (int j = Indices.Count - 1; j >= 0; --j)
+                    {
+                        Indices[j] = j;
+                    }
+                }
+                else
+                {
+                    // We're at the end, add an extra index to flag AtEnd()
+                    Indices.Add(0);
+                }
             }
 
             return result.ToArray();
         }
 
-        public bool atEnd()
+        // Removes an item from the collection and restarts combination generation at current size
+        public bool Remove(T obj)
         {
-            return CurrentDepth == -1;
+            if (Items.Contains(obj))
+            {
+                var index = Items.IndexOf(obj);
+                Items.Remove(obj);
+
+                while (Indices.Count > Items.Count)
+                {
+                    Indices.RemoveAt(0);
+                }
+
+                ResetFrom(0);
+                return true;
+            }
+            return false;
         }
-        public void reset()
+
+        // Sets the generator to start at a combination of a specific size
+        public void SetCount(uint count)
         {
-            Indices = new List<ushort>() { 0 };
+            Reset();
+            if (count <= Items.Count && count > 0)
+            {
+                // Index starts from 1 because Reset() adds 0 to the collection
+                for (int i = 1; i < count; i++)
+                {
+                    Indices.Add(i);
+                }
+            }
+        }
+
+        
+        private void ResetFrom(int i)
+        {
+            // Index safety
+            if (i > 0) 
+            {
+                for (; i < Indices.Count; i++)
+                {
+                    Indices[i] = i;
+                }
+            }
+        }
+
+        public bool AtEnd()
+        {
+            // Either stop when combo goes beyond set size, 
+            // or stop when our combo tries to become larger than the whole collection
+            return Indices.Count > Items.Count || Indices.Count > MaxSize;
+        }
+        public void Reset()
+        {
+            Indices.Clear();
+            Indices.Add(0);
         }
     }
 }

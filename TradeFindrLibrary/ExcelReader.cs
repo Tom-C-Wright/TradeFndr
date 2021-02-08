@@ -49,11 +49,12 @@ namespace TradeFindr
                                     break;
                             }
 
-                            result.Add(new Trade(Convert.ToDateTime(time), Convert.ToDouble(price), Convert.ToDouble(volume), Convert.ToDouble(value), reason));
+                            result.Add(new Trade(time: Convert.ToDateTime(time), price: Convert.ToDouble(price), volume: Convert.ToDouble(volume), value: Convert.ToDouble(value), reason: reason));
                         }
                     }
                     catch (Exception ex)
                     {
+                        Console.WriteLine(ex.Message.ToString());
                         continue; // Try to read the next row
                     }
                 }
@@ -70,6 +71,7 @@ namespace TradeFindr
                 {
                     try
                     {
+                        var x = reader;
                         DateTime time = DateTime.Parse(reader.GetString(0));
                         double price = Double.Parse(reader.GetString(1));
                         double volume = Double.Parse(reader.GetString(2));
@@ -94,11 +96,12 @@ namespace TradeFindr
 
                         if (time != null || price != 0 || volume != 0 || value != 0)
                         {
-                            result.Add(new Trade(time, price, volume, value, reason));
+                            result.Add(new Trade(time: time, price: price, value: value, volume: volume, reason: reason));
                         }
                     }
                     catch (Exception ex)
                     {
+                        Console.WriteLine(ex.Message.ToString());
                         continue; // Try to read the next row
                     }
 
@@ -108,30 +111,38 @@ namespace TradeFindr
         }
         public Trade[] ReadFile(string path)
         {
-            // Encoding Support for Windows-1252
-            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
-            using (var stream = File.Open(path, FileMode.Open, FileAccess.Read))
+            try
             {
-                
-                string type = Path.GetExtension(path);
-                if (type == ".csv")
+                // Encoding Support for Windows-1252
+                System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+                using (var stream = File.Open(path, FileMode.Open, FileAccess.Read))
                 {
-                    using (var reader = ExcelReaderFactory.CreateCsvReader(stream))
+
+                    string type = Path.GetExtension(path);
+                    if (type == ".csv")
                     {
-                        return ReadCSV(reader);
+                        using (var reader = ExcelReaderFactory.CreateCsvReader(stream))
+                        {
+                            return ReadCSV(reader);
+                        }
+                    }
+                    else if (type == ".xlsx")
+                    {
+                        using (var reader = ExcelReaderFactory.CreateReader(stream))
+                        {
+                            return ReadXlsx(reader);
+                        }
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException("Filetype not .csv or .xlsx");
                     }
                 }
-                else if (type == ".xlsx")
-                {
-                    using (var reader = ExcelReaderFactory.CreateReader(stream))
-                    {
-                        return ReadXlsx(reader);
-                    }
-                }
-                else
-                {
-                    throw new InvalidOperationException("Filetype not .csv or .xlsx");
-                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+                throw new IOException("File cannot be read because it is open in another program");
             }
         }
 

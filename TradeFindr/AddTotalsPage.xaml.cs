@@ -15,38 +15,56 @@ namespace TradeFindr
         public AddTotalsPage()
         {
             InitializeComponent();
-            DataGrid_Totals.ItemsSource = ViewModel.Instance.Totals;
+            DataGrid_Totals.ItemsSource = ViewModel.Instance.ObservableTotals;
         }
 
         private void AddTotal(Object sender, RoutedEventArgs e)
         {
             if (TextBox_BuyValue.Text.Length > 0 && TextBox_BuyVolume.Text.Length > 0 && TextBox_SellValue.Text.Length > 0 && TextBox_SellVolume.Text.Length > 0)
             {
-                var title = "";
-                title += TextBox_Title.Text.ToString();
-                var buyVal = Convert.ToDouble(TextBox_BuyValue.Text);
-                var buyVol = Convert.ToDouble(TextBox_BuyVolume.Text);
-                var sellVal = Convert.ToDouble(TextBox_SellValue.Text);
-                var sellVol = Convert.ToDouble(TextBox_SellVolume.Text);
-                var newTotal = new Total(title, buyVol, buyVal,sellVal, sellVol);
-                ViewModel.Instance.Totals.Add(newTotal);
-
-                TextBox_Title.Clear();
-                TextBox_BuyValue.Clear();
-                TextBox_BuyVolume.Clear();
-                TextBox_SellValue.Clear();
-                TextBox_SellVolume.Clear();
+                // Get values from form
+                var title = TextBox_Title.Text.ToString();
+                var buyVal = Convert.ToUInt32(TextBox_BuyValue.Text);
+                var buyVol = Convert.ToUInt32(TextBox_BuyVolume.Text);
+                var sellVal = Convert.ToUInt32(TextBox_SellValue.Text);
+                var sellVol = Convert.ToUInt32(TextBox_SellVolume.Text);
+                var totalBuys = Convert.ToUInt32(TextBox_TotalBuys.Text);
+                var totalSells = Convert.ToUInt32(TextBox_TotalSells.Text);
+                ViewModel.Instance.ObservableTotals.Add(new Broker(
+                            name: title,
+                            buyVolume: buyVol,
+                            buyValue: buyVal,
+                            totalBuys: totalBuys,
+                            sellValue: sellVal,
+                            sellVolume: sellVol,
+                            totalSells: totalSells
+                            ));
+                
+                // Reset form fields
+                ClearForm(sender, e);
             }
         }
 
-        private void DeleteTotal(Object sender, RoutedEventArgs e)
+        private void ClearForm(Object sender, RoutedEventArgs e)
+        {  
+            TextBox_Title.Clear();
+            TextBox_BuyValue.Clear();
+            TextBox_BuyVolume.Clear();
+            TextBox_TotalBuys.Clear();
+            TextBox_SellValue.Clear();
+            TextBox_SellVolume.Clear();
+            TextBox_TotalSells.Clear();
+        }
+            private void DeleteTotal(Object sender, RoutedEventArgs e)
         {
             int index = DataGrid_Totals.SelectedIndex;
+            // If a row is selected
             if (index != -1)
             {
-                ViewModel.Instance.Totals.RemoveAt(index);
+                ViewModel.Instance.ObservableTotals.RemoveAt(index);
             } 
-            else if (ViewModel.Instance.Totals.Count == 0)
+            // If no totals exist to select
+            else if (ViewModel.Instance.ObservableTotals.Count == 0)
             {
                 MessageBox.Show("No totals to delete!");
             }
@@ -58,7 +76,7 @@ namespace TradeFindr
 
         private void Btn_NextPage(Object sender, RoutedEventArgs e)
         {
-            if (ViewModel.Instance.Totals.Count > 0)
+            if (ViewModel.Instance.ObservableTotals.Count > 0)
             {
                 this.NavigationService.Navigate(new ResultsPage());
             } 

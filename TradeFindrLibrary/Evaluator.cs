@@ -2,28 +2,18 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TradeFindrLibrary;
 
 namespace TradeFindr
 {
     class Evaluator
     {
-        public Solution[] Evaluate(Trade[] trades, Solution[] totals)
+        private Broker[] Totals;
+        private Trade[] Trades;
+        public Evaluator(Broker[] totals, Trade[] trades)
         {
-            for (ushort i = 0; i < totals.Length; i++)
-            {
-                // Add up the trades
-                double sumValue = 0, sumVolume = 0;
-
-            }
-
-            // Compare to the totals
-            foreach (Solution total in totals)
-            {
-
-            }
-            
-            
-            return totals;
+            Totals = totals;
+            Trades = trades;
         }
     }
 
