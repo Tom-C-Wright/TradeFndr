@@ -31,20 +31,24 @@ namespace TradeFindr
         {
             ViewModel = ViewModel.Instance;
             InitializeComponent();
-
+            LoadData();
             var trades = new List<Trade>(ViewModel.Trades);
             var brokers = new List<Broker>(ViewModel.Brokers);
     
             datagrid_Results.IsReadOnly = true;
             datagrid_Results.ItemsSource = trades;
 
+            
             // Run in background so the UI doesn't hang
+            /*
             Thread backGroundThread = new Thread(delegate()
             {
                 MatchTradesToTotals(trades, brokers);
-            });
-            backGroundThread.Start();
-
+                var i = 0;
+            }); */
+            MatchTradesToTotals(trades, brokers);
+            //backGroundThread.Start();
+            var i = 0;
         }
         
         public void btnSaveFile_Click(object sender, RoutedEventArgs e)
@@ -74,19 +78,19 @@ namespace TradeFindr
         public void LoadData()
         {
             ExcelReader excelReader = new ExcelReader();
-            var trades = excelReader.ReadFile("E:/Software_Dev/I_dont_fucking_know_anymore/Sample_Data/Solution_1.csv");
+            var trades = excelReader.ReadFile("E:/Software_Dev/I_dont_fucking_know_anymore/Sample_Data/Solution_2.csv");
             for (ushort i = 0; i < trades.Length; i++)
             {
                 ViewModel.Trades.Add(trades[i]);
 
             }
-            /*
+            
             ViewModel.Brokers.Add(new Broker("Citigroup",50000, 3300, 1, 0, 0, 0));
             ViewModel.Brokers.Add(new Broker("CMC Markets", 155711, 10277, 7, 0, 0 ,0));
             ViewModel.Brokers.Add(new Broker("CommonWealth", 64000, 4224, 3, 5525, 83712, 4));
             ViewModel.Brokers.Add(new Broker("Merill lynch", 100001, 6600, 8, 5676, 86000, 3));
             ViewModel.Brokers.Add(new Broker("UBS", 0 , 0 , 0, 13200, 200000, 12));
-            */
+            /*
             ViewModel.Brokers.Add(new Broker("AIEX", 19607, 1000, 1, 0, 0, 0));
             ViewModel.Brokers.Add(new Broker(name: "Citigroup", buyValue: 12245, buyVolume: 249900, totalBuys: 4, sellValue: 1253, sellVolume: 26667, totalSells: 1));
             ViewModel.Brokers.Add(new Broker(name: "CMC Markets", buyValue: 5000, buyVolume: 100000, totalBuys: 2, sellValue: 0, sellVolume: 0, totalSells: 0));
@@ -97,6 +101,8 @@ namespace TradeFindr
             ViewModel.Brokers.Add(new Broker(name: "Third party", buyValue: 22556, buyVolume: 450000, totalBuys: 4, sellValue: 27235, sellVolume: 555810, totalSells: 4));
             ViewModel.Brokers.Add(new Broker(name: "Virtu Financial", buyValue: 1896, buyVolume: 38700, totalBuys: 1, sellValue: 1550, sellVolume: 31000, totalSells: 1));
             ViewModel.Brokers.Add(new Broker(name: "Wealthhub sec", buyValue: 1225, buyVolume: 25000, totalBuys: 2, sellValue: 24793, sellVolume: 499152, totalSells: 12));
+            */
+            //ViewModel.Trades.RemoveAt();
         }
         public Tuple<int, int> AddUpTotals(Trade[] trades)
         {
@@ -175,17 +181,18 @@ namespace TradeFindr
                             }
                         }
                     }
-
+                    
                     if (!sellsCombinator.AtEnd())
                     {
+                      
                         var sellsCombo = sellsCombinator.GetNextCombo();
                         var sellsTotals = AddUpTotals(sellsCombo);
 
                         for (int j = i; j < sellers.Count && sellers[j].TotalSells <= lastSellCount; j++)
                         {
                             if (sellers[j].TotalSells == sellsCombo.Length &&
-                               sellers[j].SellValue == sellsTotals.Item1 &&
-                               sellers[j].SellVolume == sellsTotals.Item2)
+                                sellers[j].SellValue == sellsTotals.Item1 &&
+                                sellers[j].SellVolume == sellsTotals.Item2)
                             {
                                 foreach (Trade trade in sellsCombo)
                                 {
@@ -194,29 +201,37 @@ namespace TradeFindr
                                 }
                             }
                         }
+                    
                     }
+                    
 
                 }   
-
-                for (int j = buys.Count -1; j >= 0; j--)
+                
+                // Prune trades once matched to a total
+                foreach (Broker buyer in buyers)
                 {
-                    if (buys[j].BuyerList.Count == 1)
+                    if (buyer.TotalBuys == buyer.Buys.Count)
                     {
-                        buys.RemoveAt(j);
+                        foreach (Trade buy in buyer.Buys)
+                        {
+                            buys.Remove(buy);
+                        }
                     }
                 }
                 
-                for (int j = sells.Count - 1; j >= 0; j--)
+                foreach (Broker seller in sellers)
                 {
-                    if (sells[j].SellerList.Count == 1)
+                    if (seller.TotalBuys == seller.Buys.Count)
                     {
-                        sells.RemoveAt(j);
+                        foreach (Trade sell in seller.Buys)
+                        {
+                            sells.Remove(sell);
+                        }
                     }
                 } 
-                
-
             }
             //return trades; // Return unmatched trades
+    
         }
     }  
 

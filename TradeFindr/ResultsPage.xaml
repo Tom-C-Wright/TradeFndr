@@ -64,7 +64,7 @@
             />
 
                 <DataGridTextColumn
-                Header="s"
+                Header="Seller"
                 Binding="{Binding Seller}"
                 Width="2*"
             />

@@ -93,10 +93,10 @@ namespace TradeFindr
                                 reason = Reason.ASK;
                                 break;
                         }
-
                         if (time != null || price != 0 || volume != 0 || value != 0)
                         {
                             result.Add(new Trade(time: time, price: price, value: value, volume: volume, reason: reason));
+                            
                         }
                     }
                     catch (Exception ex)

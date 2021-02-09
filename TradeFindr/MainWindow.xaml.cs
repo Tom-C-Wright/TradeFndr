@@ -30,7 +30,8 @@ namespace TradeFindr
             InitializeComponent();
             this.DataContext = this;
             // Take us to the home page
-            MainFrame.Navigate(new OpenFilePage());
+            //MainFrame.Navigate(new OpenFilePage());
+            MainFrame.Navigate(new ResultsPage());
         }
     }
 }
