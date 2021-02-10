@@ -123,7 +123,8 @@ namespace TradeFindr
             }
         }
 
-        
+        // From a specific index to end of the collection,
+        // Set each index to its lowest possible value
         private void ResetFrom(int i)
         {
             // Index safety

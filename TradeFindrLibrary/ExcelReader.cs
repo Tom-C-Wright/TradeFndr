@@ -49,7 +49,7 @@ namespace TradeFindr
                                     break;
                             }
 
-                            result.Add(new Trade(time: Convert.ToDateTime(time), price: Convert.ToDouble(price), volume: Convert.ToDouble(volume), value: Convert.ToDouble(value), reason: reason));
+                            result.Add(new Trade(time: Convert.ToDateTime(time), price: Convert.ToInt32(price), volume: Convert.ToInt32(volume), value: Convert.ToInt32(value), reason: reason));
                         }
                     }
                     catch (Exception ex)
@@ -73,9 +73,11 @@ namespace TradeFindr
                     {
                         var x = reader;
                         DateTime time = DateTime.Parse(reader.GetString(0));
-                        double price = Double.Parse(reader.GetString(1));
-                        double volume = Double.Parse(reader.GetString(2));
-                        double value = Double.Parse(reader.GetString(3));
+                        var i = 0;
+                        var price = Convert.ToDouble(reader.GetString(1));
+                        var test = reader.GetString(2);
+                        var volume = Convert.ToInt32(reader.GetString(2).Replace(",", ""));
+                        var value = Convert.ToInt32(reader.GetString(3).Replace(",", ""));
                         string reasonString = reader.GetString(4);
                         Reason reason;
                         switch (reasonString)
@@ -104,6 +106,7 @@ namespace TradeFindr
                         Console.WriteLine(ex.Message.ToString());
                         continue; // Try to read the next row
                     }
+                    
 
                 }
             } while (reader.NextResult());

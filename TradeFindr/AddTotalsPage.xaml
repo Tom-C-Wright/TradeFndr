@@ -22,7 +22,6 @@
                 Grid.Column="0" Grid.Row="0"
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
-                
                 Margin="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
@@ -39,8 +38,8 @@
                     <RowDefinition Height="25"/>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="30"/>
-
                 </Grid.RowDefinitions>
+                <!-- Label for Name-->
                 <TextBlock 
                     Text="Name" Margin="5"
                     HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -52,6 +51,7 @@
                     Grid.Column="1" Grid.Row="0" Margin="0,2.5,0,2.5"
                     PreviewTextInput="TextValidation"
                 />
+                <!-- Label for Buy Value-->
                 <TextBlock 
                     Text="Buy Value" 
                     HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -63,7 +63,7 @@
                     Grid.Column="1" Grid.Row="1" Margin="0,2.5,0,2.5"
                     PreviewTextInput="NumberValidation"
                 />
-                
+                <!-- Label for Sell Value-->
                 <TextBlock 
                     Text="Sell Value" 
                     HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -75,6 +75,7 @@
                     Grid.Column="1" Grid.Row="2" Margin="0,2.5,0,2.5"
                     PreviewTextInput="NumberValidation"
                 />
+                <!-- Label for Sell Volume -->
                 <TextBlock 
                     Text="Sell Volume" 
                     HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -86,6 +87,7 @@
                     Grid.Column="1" Grid.Row="4" Margin="0,2.5,0,2.5"
                     PreviewTextInput="NumberValidation"
                 />
+                <!-- Label for Buy Volume -->
                 <TextBlock 
                     Text="Buy Volume" 
                     HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -97,6 +99,7 @@
                     Grid.Column="1" Grid.Row="3" Margin="0,2.5,0,2.5"
                     PreviewTextInput="NumberValidation"
                 />
+                <!-- Label for No. Buys -->
                 <TextBlock 
                     Text="No. Buys" 
                     HorizontalAlignment="Center" VerticalAlignment="Center"
@@ -108,11 +111,7 @@
                     Grid.Column="1" Grid.Row="5" Margin="0,2.5,0,2.5"
                     PreviewTextInput="NumberValidation"
                 />
-
-                
-
-             
-
+                <!-- Label for No. Sells -->
                 <TextBlock 
                     Text="No. Sells" 
                     HorizontalAlignment="Center" VerticalAlignment="Center" 
@@ -124,20 +123,20 @@
                     Grid.Column="1" Grid.Row="6" Margin="0,2.5,0,2.5"
                     PreviewTextInput="NumberValidation"
                 />
-
+                <!-- Add Total Button-->
                 <Button 
                     Click="AddTotal"
                     HorizontalAlignment="Stretch" Margin="2"
                     Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2"
                     Content="Add"
                 />
+                <!-- Clear Form Button-->
                 <Button 
                     Click="ClearForm"
                     HorizontalAlignment="Stretch" Margin="2"
                     Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2"
                     Content="Clear"
                 />
-
             </Grid>
         </Border>
         <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Top">
@@ -145,8 +144,7 @@
                 Text="Totals:" FontSize="16" TextAlignment="Left" 
                 Width="100" HorizontalAlignment="Left" Margin="10,10,0,0"
             />
-            <DataGrid Margin="10" AutoGenerateColumns="false" x:Name="DataGrid_Totals"
-                      >
+            <DataGrid Margin="10" AutoGenerateColumns="false" x:Name="DataGrid_Totals">
                 <DataGrid.Columns>
                     <DataGridTextColumn
                         Header="Title" Width="1*"

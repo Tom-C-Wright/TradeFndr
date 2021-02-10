@@ -7,10 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TradeFindr", "TradeFindr.cs
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TradeFindrLibrary", "..\TradeFindrLibrary\TradeFindrLibrary.csproj", "{640192C9-5A88-4F37-92E1-932D7A0B09DE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "C:\Users\Tom\source\repos\ConsoleApp1\ConsoleApp1.csproj", "{07AAAA3C-650A-4BDA-8AE5-A8A5A1211EC3}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Combination_Generator_Tests", "..\Combination_Generator_Tests\Combination_Generator_Tests.csproj", "{CC2049B9-70E6-4430-B524-5654FFC13A84}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{640192C9-5A88-4F37-92E1-932D7A0B09DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{640192C9-5A88-4F37-92E1-932D7A0B09DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{640192C9-5A88-4F37-92E1-932D7A0B09DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07AAAA3C-650A-4BDA-8AE5-A8A5A1211EC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07AAAA3C-650A-4BDA-8AE5-A8A5A1211EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07AAAA3C-650A-4BDA-8AE5-A8A5A1211EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07AAAA3C-650A-4BDA-8AE5-A8A5A1211EC3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CC2049B9-70E6-4430-B524-5654FFC13A84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC2049B9-70E6-4430-B524-5654FFC13A84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC2049B9-70E6-4430-B524-5654FFC13A84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC2049B9-70E6-4430-B524-5654FFC13A84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

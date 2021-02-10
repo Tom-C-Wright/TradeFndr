@@ -14,8 +14,8 @@ namespace TradeFindr
     public class Trade
     {
         // Properties have to be used for WPF databinding
-        public double Value { get; set; }
-        public double Volume { get; set; }
+        public int Value { get; set; }
+        public int Volume { get; set; }
         public double Price { get; set; }
         public DateTime Time { get; set; }
         public Reason Reason { get; set; }
@@ -41,7 +41,7 @@ namespace TradeFindr
 
         public readonly List<Broker> BuyerList;
         public readonly List<Broker> SellerList;
-        public Trade(DateTime time, double price, double value, double volume, Reason reason, string buyer = "", string seller = "")
+        public Trade(DateTime time, double price, int value, int volume, Reason reason, string buyer = "", string seller = "")
         {
             Time = time;
             Price = price;

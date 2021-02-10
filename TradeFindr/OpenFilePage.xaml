@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Height="auto"
       Width="auto"
-      Title="Page2"
+      Title="Open File"
       Background="White">
 
     <Grid>
@@ -16,15 +16,12 @@
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
+            <RowDefinition Height="70" />
             <RowDefinition MinHeight="0" MaxHeight="30" />
             <RowDefinition Height="1*" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="40" />
         </Grid.RowDefinitions>
-        <Grid
-            Grid.Column="0"
-            Grid.Row="0"
-            >
+        <Grid Grid.Column="0" Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="8*"/>
                 <ColumnDefinition Width="2*"/>
@@ -33,28 +30,33 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <TextBlock 
+            <!-- Label for Step 1 -->
+                <TextBlock 
                 Grid.Column="0"
                 Grid.Row="0"
                 Width="150"
                 HorizontalAlignment="Left"
                 Text="Step 1: Select File"
-                Margin="0,0,0,10"
+                Margin="10,5,0,5"
                 Background="LightGray"/>
+            <!-- File Path Textbox -->
             <TextBlock 
+                Height="20"
                 Grid.Column="0"
                 Grid.Row="1"
                 Background="Beige"
                 x:Name="File_Path" Text="C://"
+                Margin="10,0,0,0"
             />
+            <!-- Upload File button -->
             <Button 
+                Height="20"
                 Grid.Column="1"
                 Grid.Row="1"
                 Content="Choose File ..." 
                 Click="btn_OpenFile"
             />
         </Grid>
-  
         <TextBlock 
             Grid.Row="1"
             x:Name="TextBox_Step2"
@@ -62,9 +64,8 @@
             Width="150" Height="20"
             Background="LightGray"
             HorizontalAlignment="Left" VerticalAlignment="Center"
-            Margin="0,5,0,5"
+            Margin="10,5,0,5"
             Visibility="Collapsed" d:Visibility="Visible"
-               
         />
         <DataGrid
             Grid.Column="0"

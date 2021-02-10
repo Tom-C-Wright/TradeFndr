@@ -14,7 +14,7 @@ namespace TradeFindr
         {
             
         }
-
+        // Singleton constuctor
         public static ViewModel Instance
         {
             get
@@ -23,19 +23,8 @@ namespace TradeFindr
             }
         }
 
+        // Lists can be bound to UI, and have their conte
         public readonly ObservableCollection<Trade> Trades = new ObservableCollection<Trade>();
         public readonly ObservableCollection<Broker> Brokers = new ObservableCollection<Broker>();
-
-        // Exposed observables for Views
-        public ObservableCollection<Trade> ObservableTrades
-        {
-            get { return Trades; }
-
-        }
-
-        public ObservableCollection<Broker> ObservableTotals
-        {
-            get { return Brokers;  }
-        }
     }
 }

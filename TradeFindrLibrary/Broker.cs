@@ -13,10 +13,8 @@ namespace TradeFindrLibrary
 
     public class Broker
     {
+        // Properties for XML bindin
         public string Company { get; set; }
-      
-
-        // Accessors for XML binding
         public uint BuyValue { get; set; }
         public uint BuyVolume { get; set; }
         public uint TotalBuys { get; set; } 

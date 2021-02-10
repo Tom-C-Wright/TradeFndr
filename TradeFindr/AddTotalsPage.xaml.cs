@@ -12,10 +12,12 @@ namespace TradeFindr
     /// </summary>
     public partial class AddTotalsPage : Page
     {
+        ViewModel viewModel;
         public AddTotalsPage()
         {
+            viewModel = ViewModel.Instance;
             InitializeComponent();
-            DataGrid_Totals.ItemsSource = ViewModel.Instance.ObservableTotals;
+            DataGrid_Totals.ItemsSource = viewModel.Brokers;
         }
 
         private void AddTotal(Object sender, RoutedEventArgs e)
@@ -30,7 +32,7 @@ namespace TradeFindr
                 var sellVol = Convert.ToUInt32(TextBox_SellVolume.Text);
                 var totalBuys = Convert.ToUInt32(TextBox_TotalBuys.Text);
                 var totalSells = Convert.ToUInt32(TextBox_TotalSells.Text);
-                ViewModel.Instance.ObservableTotals.Add(new Broker(
+                viewModel.Brokers.Add(new Broker(
                             name: title,
                             buyVolume: buyVol,
                             buyValue: buyVal,
@@ -55,16 +57,18 @@ namespace TradeFindr
             TextBox_SellVolume.Clear();
             TextBox_TotalSells.Clear();
         }
-            private void DeleteTotal(Object sender, RoutedEventArgs e)
+
+        // Removes a selected total from the viewmodel
+        private void DeleteTotal(Object sender, RoutedEventArgs e)
         {
             int index = DataGrid_Totals.SelectedIndex;
             // If a row is selected
             if (index != -1)
             {
-                ViewModel.Instance.ObservableTotals.RemoveAt(index);
+                viewModel.Brokers.RemoveAt(index);
             } 
             // If no totals exist to select
-            else if (ViewModel.Instance.ObservableTotals.Count == 0)
+            else if (viewModel.Brokers.Count == 0)
             {
                 MessageBox.Show("No totals to delete!");
             }
@@ -76,7 +80,7 @@ namespace TradeFindr
 
         private void Btn_NextPage(Object sender, RoutedEventArgs e)
         {
-            if (ViewModel.Instance.ObservableTotals.Count > 0)
+            if (viewModel.Brokers.Count > 0)
             {
                 this.NavigationService.Navigate(new ResultsPage());
             } 
@@ -94,12 +98,14 @@ namespace TradeFindr
             }
         }
 
+        // Only allows numbers in textbox
         private void NumberValidation(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
         }
 
+        // Only allows Alphabetical characters & spaces in text box
         private void TextValidation(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^A-Za-z ]+");
