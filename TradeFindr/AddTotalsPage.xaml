@@ -75,18 +75,6 @@
                     Grid.Column="1" Grid.Row="2" Margin="0,2.5,0,2.5"
                     PreviewTextInput="NumberValidation"
                 />
-                <!-- Label for Sell Volume -->
-                <TextBlock 
-                    Text="Sell Volume" 
-                    HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Grid.Column="0" Grid.Row="4"
-                />
-                <!-- Input for Sell volume-->
-                <TextBox 
-                    Name="TextBox_SellVolume"
-                    Grid.Column="1" Grid.Row="4" Margin="0,2.5,0,2.5"
-                    PreviewTextInput="NumberValidation"
-                />
                 <!-- Label for Buy Volume -->
                 <TextBlock 
                     Text="Buy Volume" 
@@ -99,6 +87,19 @@
                     Grid.Column="1" Grid.Row="3" Margin="0,2.5,0,2.5"
                     PreviewTextInput="NumberValidation"
                 />
+                <!-- Label for Sell Volume -->
+                <TextBlock 
+                    Text="Sell Volume" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Grid.Column="0" Grid.Row="4"
+                />
+                <!-- Input for Sell volume-->
+                <TextBox 
+                    Name="TextBox_SellVolume"
+                    Grid.Column="1" Grid.Row="4" Margin="0,2.5,0,2.5"
+                    PreviewTextInput="NumberValidation"
+                />
+             
                 <!-- Label for No. Buys -->
                 <TextBlock 
                     Text="No. Buys" 
